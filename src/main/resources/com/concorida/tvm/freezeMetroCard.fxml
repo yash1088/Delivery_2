@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.concorida.tvm.FreezeMetroCardController">
+    <VBox spacing="10">
+        <padding>
+            <Insets left="10" top="20"/>
+        </padding>
+        <Label text="Report a lost MetroCard"
+               style="-fx-font-family: 'Arial Rounded MT Bold'; -fx-text-fill: #c86706" fx:id="labelFM0">
+            <font>
+                <Font size="28"/>
+            </font>
+        </Label>
+        <Label prefHeight="18"/>
+        <HBox>
+            <Label text="MetroCard ID: " prefWidth="180" style="-fx-font-family: 'Arial Rounded MT Bold'" fx:id="labelFM1">
+                <font>
+                    <Font size="20"/>
+                </font>
+            </Label>
+            <TextField fx:id="metroCardId" prefWidth="200"/>
+        </HBox>
+        <HBox>
+            <Label text="Phone Numbers:" prefWidth="180" style="-fx-font-family: 'Arial Rounded MT Bold'" fx:id="labelFM2">
+                <font>
+                    <Font size="20"/>
+                </font>
+            </Label>
+            <TextField prefWidth="200" fx:id="phone"/>
+            <Label prefWidth="10"/>
+            <Button prefWidth="100" text="Receive code" fx:id="receive"/>
+        </HBox>
+        <HBox>
+            <Label text="Verification code: " prefWidth="180" style="-fx-font-family: 'Arial Rounded MT Bold'" fx:id="labelFM3">
+                <font>
+                    <Font size="20"/>
+                </font>
+            </Label>
+            <TextField fx:id="verificationCode" prefWidth="200"/>
+        </HBox>
+        <HBox>
+            <padding>
+                <Insets left="180"/>
+            </padding>
+            <Button text="Freeze" fx:id="freezeButton" style="-fx-font-size: 18; -fx-font-family: 'Arial Rounded MT Bold';
+                    -fx-text-alignment: center; -fx-background-color: #c86706"
+                    prefHeight="40" prefWidth="120" onAction="#freezeCard"/>
+        </HBox>
+        <Label prefHeight="20"/>
+        <HBox>
+            <padding>
+                <Insets left="150"/>
+            </padding>
+            <Label fx:id="confirm_msg" prefWidth="500" prefHeight="18" style="-fx-font-size: 18;
+            -fx-text-alignment: center; -fx-text-fill: #c86706; -fx-font-family: 'Arial Rounded MT Bold'"/>
+        </HBox>
+    </VBox>
+</AnchorPane>

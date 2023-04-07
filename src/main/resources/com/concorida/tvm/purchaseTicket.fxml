@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.concorida.tvm.PurchaseTicketController">
+    <VBox spacing="10">
+        <padding>
+            <Insets left="10" top="20"/>
+        </padding>
+        <Label text="Purchase Tickets"
+               style="-fx-font-family: 'Arial Rounded MT Bold'; -fx-text-fill: #c86706" fx:id="labelPT0">
+            <font>
+                <Font size="28"/>
+            </font>
+        </Label>
+
+        <HBox spacing="50">
+            <VBox spacing="10" style="-fx-background-color: #d3e7cc">
+                <Label text="Select Ticket Type:" style="-fx-font-family: 'Arial Rounded MT Bold'" fx:id="labelPT1">
+                    <font>
+                        <Font size="20"/>
+                    </font>
+                </Label>
+                <fx:define>
+                    <ToggleGroup fx:id="ticketTypeToggleGroup"/>
+                </fx:define>
+                    <RadioButton text="STM-1 trip 3.25$" userData="STM1" toggleGroup="$ticketTypeToggleGroup"
+                                 style="-fx-font-family: 'Arial Rounded MT Bold'; -fx-font-size: 20" selected="true" fx:id="rdPT1"/>
+                    <RadioButton text="STM-2 trips 6.00$" userData="50" toggleGroup="$ticketTypeToggleGroup"
+                                 style="-fx-font-family: 'Arial Rounded MT Bold'; -fx-font-size: 20" fx:id="rdPT2"/>
+                    <RadioButton text="STM-3 trips 8.75$" userData="STM2" toggleGroup="$ticketTypeToggleGroup"
+                                 style="-fx-font-family: 'Arial Rounded MT Bold'; -fx-font-size: 20" fx:id="rdPT3"/>
+                    <RadioButton text="STM-Unlim. Weekend 13.00$" userData="STM-WEEKEND" toggleGroup="$ticketTypeToggleGroup"
+                                 style="-fx-font-family: 'Arial Rounded MT Bold'; -fx-font-size: 20" fx:id="rdPT4"/>
+                    <RadioButton text="STM-1 day 10.00$" userData="STM1DAY" toggleGroup="$ticketTypeToggleGroup"
+                             style="-fx-font-family: 'Arial Rounded MT Bold'; -fx-font-size: 20" fx:id="rdPT5"/>
+                    <RadioButton text="STM-Unlim. evening 5.00$" userData="STM_EVENING" toggleGroup="$ticketTypeToggleGroup"
+                             style="-fx-font-family: 'Arial Rounded MT Bold'; -fx-font-size: 20" fx:id="rdPT6"/>
+            </VBox>
+            <VBox spacing="10" style="-fx-background-color: #d4bc7e">
+                <Label text="Select the number of fares:" style="-fx-font-family: 'Arial Rounded MT Bold'" fx:id="labelPT2">
+                    <font>
+                        <Font size="20"/>
+                    </font>
+                </Label>
+                <fx:define>
+                    <ToggleGroup fx:id="faresToggleGroup"/>
+                </fx:define>
+                    <RadioButton text="1 Fare" userData="1_FARE" toggleGroup="$faresToggleGroup" selected="true"
+                                 style="-fx-font-family: 'Arial Rounded MT Bold'; -fx-font-size: 20" fx:id="rdPT7"/>
+                    <RadioButton text="2 Fares" userData="2_FARES" toggleGroup="$faresToggleGroup"
+                                 style="-fx-font-family: 'Arial Rounded MT Bold'; -fx-font-size: 20" fx:id="rdPT8"/>
+                    <RadioButton text="3 Fares" userData="3_FARES" toggleGroup="$faresToggleGroup"
+                                 style="-fx-font-family: 'Arial Rounded MT Bold'; -fx-font-size: 20" fx:id="rdPT9"/>
+                    <RadioButton text="4 Fares" userData="4_FARES" toggleGroup="$faresToggleGroup"
+                             style="-fx-font-family: 'Arial Rounded MT Bold'; -fx-font-size: 20" fx:id="rdPT10"/>
+            </VBox>
+        </HBox>
+        <Label prefHeight="15"/>
+        <Label text="Select Payment Method:" style="-fx-font-family: 'Arial Rounded MT Bold'" fx:id="labelPT3">
+            <font>
+                <Font size="20"/>
+            </font>
+        </Label>
+        <fx:define>
+            <ToggleGroup fx:id="paymentMethodToggleGroup"/>
+        </fx:define>
+        <HBox spacing="10">
+            <RadioButton text="Cash" userData="CASH" toggleGroup="$paymentMethodToggleGroup" selected="true"
+                         style="-fx-font-family: 'Arial Rounded MT Bold'; -fx-font-size: 20" fx:id="rdPT11"/>
+            <RadioButton text="Credit Card" userData="CREDIT_CARD" toggleGroup="$paymentMethodToggleGroup"
+                         style="-fx-font-family: 'Arial Rounded MT Bold'; -fx-font-size: 20" fx:id="rdPT12"/>
+            <RadioButton text="Debit Card" userData="DEBIT_CARD" toggleGroup="$paymentMethodToggleGroup"
+                         style="-fx-font-family: 'Arial Rounded MT Bold'; -fx-font-size: 20" fx:id="rdPT13"/>
+            <RadioButton text="Mobile Payment" userData="MOBILE_PAYMENT" toggleGroup="$paymentMethodToggleGroup"
+                         style="-fx-font-family: 'Arial Rounded MT Bold'; -fx-font-size: 20" fx:id="rdPT14"/>
+        </HBox>
+        <Label text="Invoice:" style="-fx-font-family: 'Arial Rounded MT Bold'" fx:id="labelPT4">
+            <font>
+                <Font size="20"/>
+            </font>
+        </Label>
+        <fx:define>
+            <ToggleGroup fx:id="invoiceToggleGroup"/>
+        </fx:define>
+        <HBox spacing="10">
+            <RadioButton text="No" userData="NO_INVOICE" toggleGroup="$invoiceToggleGroup" selected="true"
+                         style="-fx-font-family: 'Arial Rounded MT Bold'; -fx-font-size: 20" fx:id="rdPT15"/>
+            <RadioButton text="Print invoice" userData="PRINT_INVOICE" toggleGroup="$invoiceToggleGroup"
+                         style="-fx-font-family: 'Arial Rounded MT Bold'; -fx-font-size: 20" fx:id="rdPT16"/>
+            <RadioButton text="Send email" userData="EMAIL_INVOICE" toggleGroup="$invoiceToggleGroup"
+                         style="-fx-font-family: 'Arial Rounded MT Bold'; -fx-font-size: 20" fx:id="rdPT17"/>
+        </HBox>
+        <HBox fx:id="emailAddressHBox">
+            <Label text="Email address: " prefWidth="160" style="-fx-font-family: 'Arial Rounded MT Bold'; -fx-font-size: 20" fx:id="labelPT5"/>
+            <TextField fx:id="emailAddressTextField" prefWidth="250" style="-fx-font-family: 'Arial Rounded MT Bold'; -fx-font-size: 20"/>
+        </HBox>
+        <HBox>
+            <padding>
+                <Insets left="180"/>
+            </padding>
+            <Button text="Pay" fx:id="payButton" onAction="#handlePay"
+                    style="-fx-font-size: 18; -fx-font-family: 'Arial Rounded MT Bold';
+                    -fx-text-alignment: center; -fx-background-color: #c86706"
+                    prefHeight="40" prefWidth="120">
+            </Button>
+        </HBox>
+
+        <VBox>
+            <padding>
+                <Insets left="130"/>
+            </padding>
+            <Label fx:id="Invoice_Msg" prefWidth="500" prefHeight="18" style="-fx-font-size: 18;
+            -fx-text-alignment: center; -fx-text-fill: #c86706; -fx-font-family: 'Arial Rounded MT Bold'"/>
+            <Label fx:id="Message" prefWidth="500" prefHeight="18" style="-fx-font-size: 18;
+            -fx-text-alignment: center; -fx-text-fill: #c86706; -fx-font-family: 'Arial Rounded MT Bold'"/>
+            <Label fx:id="QRCode" prefWidth="500" prefHeight="100" style="-fx-font-size: 18;
+            -fx-text-alignment: center; -fx-text-fill: #c86706; -fx-font-family: 'Arial Rounded MT Bold'"/>
+        </VBox>
+    </VBox>
+</AnchorPane>

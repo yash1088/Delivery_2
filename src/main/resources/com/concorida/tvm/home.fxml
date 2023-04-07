@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<?import javafx.geometry.Insets?>
+<AnchorPane fx:id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.concorida.tvm.Controller">
+    <children>
+        <BorderPane prefHeight="700.0" prefWidth="900.0">
+            <top>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                      text="Welcome to montreal metro station :)"
+                      style="-fx-font-family: 'Arial Rounded MT Bold'; -fx-font-size: 12;"
+                      BorderPane.alignment="CENTER_LEFT" />
+            </top>
+            <left>
+                <VBox fx:id="menuBox" prefHeight="700.0" prefWidth="200.0" spacing="20"
+                      style="-fx-border-color: #6bdbca; -fx-alignment: center;
+                      -fx-background-color: #d9d2fb">
+                    <Button text="Home" prefWidth="180" prefHeight="50" fx:id="homeButton"
+                            style="-fx-alignment: center; -fx-background-color: #75c8ec;
+                            -fx-border-color: #3db7e8; -fx-border-width: 5; -fx-font-size: 14;
+                            -fx-font-family: 'Arial Rounded MT Bold'" onAction="#showHome"/>
+                    <Button text="Metrocard Recharge" prefWidth="180" prefHeight="50" fx:id="rechargeButton"
+                            style="-fx-alignment: center; -fx-background-color: #75c8ec;
+                            -fx-border-color: #3db7e8; -fx-border-width: 5; -fx-font-size: 14;
+                            -fx-font-family: 'Arial Rounded MT Bold'" onAction="#handleRecharge"/>
+                    <Button text="Purchase Tickets" prefWidth="180" prefHeight="50" fx:id="purchaseButton"
+                            style="-fx-alignment: center; -fx-background-color: #75c8ec;
+                            -fx-border-color: #3db7e8; -fx-border-width: 5; -fx-font-size: 14;
+                            -fx-font-family: 'Arial Rounded MT Bold'" onAction="#handlePurchase"/>
+                    <Button text="Lost Metrocard" prefWidth="180" prefHeight="50" fx:id="lostButton"
+                            style="-fx-alignment: center; -fx-background-color: #75c8ec;
+                            -fx-border-color: #3db7e8; -fx-border-width: 5; -fx-font-size: 14;
+                            -fx-font-family: 'Arial Rounded MT Bold'" onAction="#reportLost"/>
+                    <Button text="Metro Map" prefWidth="180" prefHeight="50" fx:id="mapButton"
+                            style="-fx-alignment: center; -fx-background-color: #75c8ec;
+                            -fx-border-color: #3db7e8; -fx-border-width: 5; -fx-font-size: 14;
+                            -fx-font-family: 'Arial Rounded MT Bold'" onAction="#showMap"/>
+                </VBox>
+            </left>
+            <center>
+                <ScrollPane prefHeight="700.0" prefWidth="700.0"
+                            style="-fx-border-color: #6bdbca;" BorderPane.alignment="CENTER">
+                    <content>
+                        <AnchorPane fx:id="main_pane_under_scroll"
+                                    style="-fx-background-color: white;"
+                                    maxHeight="-Infinity" maxWidth="-Infinity"
+                                    prefHeight="700.0" prefWidth="800.0">
+                            <HBox>
+                                <padding>
+                                    <Insets top="10" left="550"/>
+                                </padding>
+                                <Button text="Français" prefWidth="120" prefHeight="50"
+                                        style="-fx-alignment: center; -fx-background-color: #d9d2fb;
+                                        -fx-border-color: #3db7e8; -fx-border-width: 5; -fx-font-size: 14;
+                                         -fx-font-family: 'Arial Rounded MT Bold'" onAction="#homeFr"/>
+                            </HBox>
+                        </AnchorPane>
+                    </content>
+                </ScrollPane>
+            </center>
+        </BorderPane>
+    </children>
+</AnchorPane>
